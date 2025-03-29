@@ -4,10 +4,25 @@ const Summarizer = ({
   summary,
   handleSummarize,
   handleReset,
+  model,
+  setModel,
 }) => {
   return (
     <>
       <p className="mb-4 text-lg">Masukkan teks untuk diringkas:</p>
+      <select
+        value={model}
+        onChange={(e) => setModel(e.target.value)}
+        className="mb-4 p-2 border border-gray-300 rounded"
+      >
+        <option value="deepseek/deepseek-chat-v3-0324:free">DeepSeek V3</option>
+        <option value="meta-llama/llama-3.3-70b-instruct:free">
+          Llama 3.3 70B Instruct (Meta)
+        </option>
+        <option value="google/gemini-2.0-flash-exp:free">
+          Gemini Flash 2.0 Experimental (Google)
+        </option>
+      </select>
       <div className="flex flex-col sm:flex-row gap-4">
         <textarea
           value={inputText}

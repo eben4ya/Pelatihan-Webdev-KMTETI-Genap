@@ -6,6 +6,7 @@ const Summarizer = ({
   handleReset,
   model,
   setModel,
+  loading,
 }) => {
   return (
     <>
@@ -49,8 +50,11 @@ const Summarizer = ({
       <section className="mt-8 bg-white p-4 rounded shadow">
         <h2 className="text-xl font-semibold mb-2">Hasil Ringkasan</h2>
         <p className="text-gray-700">
-          {summary ||
-            "Hasil ringkasan teks akan muncul di sini setelah proses ringkasan selesai."}
+          {summary
+            ? summary
+            : loading
+            ? "Sedang memproses ringkasan..."
+            : "Hasil ringkasan teks akan muncul di sini setelah proses ringkasan selesai."}
         </p>
       </section>
     </>

@@ -8,6 +8,7 @@ const App = () => {
   const [summary, setSummary] = useState("");
   const [history, setHistory] = useState([]);
   const [model, setModel] = useState("deepseek/deepseek-chat-v3-0324:free");
+  const [loading, setLoading] = useState(false);
 
   // Ambil riwayat dari localStorage saat komponen pertama kali dimuat
   useEffect(() => {
@@ -20,6 +21,7 @@ const App = () => {
     if (inputText.trim() === "") return;
     // Kirim teks ke API untuk diringkas
     try {
+      setLoading(true);
       const response = await fetch(
         "https://openrouter.ai/api/v1/chat/completions",
         {
@@ -45,6 +47,7 @@ const App = () => {
       const newHistory = [...history, data.choices[0].message.content];
       setHistory(newHistory);
       localStorage.setItem("summaryHistory", JSON.stringify(newHistory));
+      setLoading(false);
     } catch (error) {
       console.error("Gagal mengambil data ringkasan:", error);
     }
@@ -73,6 +76,7 @@ const App = () => {
           handleReset={handleReset}
           model={model}
           setModel={setModel}
+          loading={loading}
         />
         <History history={history} handleDelete={handleDelete} />
       </main>

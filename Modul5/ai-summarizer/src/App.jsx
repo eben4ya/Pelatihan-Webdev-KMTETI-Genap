@@ -20,6 +20,7 @@ const App = () => {
   const handleSummarize = async () => {
     if (inputText.trim() === "") return;
 
+    setSummary("");
     setLoading(true);
     // Kirim teks ke API untuk diringkas
     try {

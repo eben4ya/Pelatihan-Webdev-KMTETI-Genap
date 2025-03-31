@@ -19,9 +19,10 @@ const App = () => {
 
   const handleSummarize = async () => {
     if (inputText.trim() === "") return;
+
+    setLoading(true);
     // Kirim teks ke API untuk diringkas
     try {
-      setLoading(true);
       const response = await fetch(
         "https://openrouter.ai/api/v1/chat/completions",
         {
@@ -47,9 +48,10 @@ const App = () => {
       const newHistory = [...history, data.choices[0].message.content];
       setHistory(newHistory);
       localStorage.setItem("summaryHistory", JSON.stringify(newHistory));
-      setLoading(false);
     } catch (error) {
       console.error("Gagal mengambil data ringkasan:", error);
+    } finally {
+      setLoading(false);
     }
   };
 

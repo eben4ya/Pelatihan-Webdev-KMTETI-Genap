@@ -36,7 +36,7 @@ const App = () => {
             messages: [
               {
                 role: "user",
-                content: `Summarize the following text and translate the summary results according to the language in an easy to understand language:\n${inputText}`,
+                content: `Summarize the following text without any addition answer. Answer in the language the user speaks:\n${inputText}`,
               },
             ],
           }),

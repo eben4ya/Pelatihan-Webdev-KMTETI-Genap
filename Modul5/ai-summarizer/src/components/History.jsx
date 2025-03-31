@@ -11,6 +11,9 @@ const History = ({ history, handleDelete }) => {
           {history.map((item, index) => (
             <li key={index} className="flex justify-between items-center gap-8">
               <div>
+                <h1 className="text-black font-semibold">
+                  Summary {index + 1}:
+                </h1>
                 <ReactMarkdown>{item}</ReactMarkdown>
               </div>
               <button

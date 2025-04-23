@@ -274,9 +274,79 @@ Tambahkan animasi loading untuk menunggu jawaban model AI
 
 ---
 
-## Kesimpulan Modul 5
+## 🚀 Deployment Aplikasi React
 
-- Peserta memahami integrasi API dengan React dan layanan OpenRouter.
-- Peserta mampu membuat aplikasi React yang terhubung ke model AI untuk menghasilkan ringkasan teks otomatis.
+### Apa itu Deployment?
 
-🚀 **Selanjutnya**, kita akan mendeploy aplikasi agar dapat diakses semua orang.
+Deployment adalah proses untuk mempublikasikan aplikasi kita agar bisa diakses secara online oleh siapa saja. Setelah aplikasi selesai dibuat dan diuji coba secara lokal, langkah berikutnya adalah melakukan deployment agar aplikasi dapat digunakan oleh pengguna secara luas melalui internet.
+
+---
+
+## 🌐 Pengenalan Vercel
+
+**Vercel** adalah platform hosting modern yang dirancang khusus untuk aplikasi frontend seperti React, Next.js, Vue, dan lain-lain. Kelebihan Vercel antara lain:
+
+- Gratis untuk penggunaan standar.
+- Deployment mudah melalui integrasi dengan GitHub, GitLab, atau Bitbucket.
+- Cepat dan scalable, dengan CDN otomatis.
+- Mendukung HTTPS otomatis untuk keamanan aplikasi.
+- Mendukung continuous deployment (deploy otomatis setiap kali kode berubah di repository).
+
+---
+
+## 🔧 Langkah-langkah Deployment ke Vercel
+
+Berikut langkah-langkah mudah untuk deploy aplikasi React kamu ke Vercel:
+
+### 1. Push Project ke GitHub
+
+- Pilih repository mu di [GitHub](https://github.com/).
+- Push kode aplikasi React kamu ke repository tersebut.
+
+### 2. Login ke Vercel
+
+- Buka [https://vercel.com](https://vercel.com) dan login menggunakan akun GitHub kamu.
+
+### 3. Import Project
+
+- Klik tombol **Add New** → **Project**.
+- Pilih repository GitHub yang sudah kamu buat sebelumnya.
+
+### 4. Konfigurasi Project
+
+- Pada bagian **Configure Project**, Vercel secara otomatis mendeteksi React dan menyesuaikan pengaturan yang diperlukan.
+- Pastikan build command: `npm run build` dan output directory: `dist` 
+
+### 5. Variabel Lingkungan (Environment Variables)
+
+- Tambahkan variabel lingkungan (Environment Variables) jika kamu menggunakan file `.env` di project-mu, misalnya:
+
+| Key                     | Value          |
+| ----------------------- | -------------- |
+| VITE_OPENROUTER_API_KEY | `API_KEY_KAMU` |
+
+- Klik **Environment Variables** lalu isi key dan value-nya sesuai yang dibutuhkan aplikasi.
+
+### 6. Deploy Project
+
+- Klik tombol **Deploy** untuk memulai proses deployment.
+- Tunggu beberapa menit hingga deployment selesai.
+
+### 7. Aplikasi Siap Diakses
+
+- Setelah proses deployment berhasil, kamu akan mendapatkan URL yang bisa langsung dibuka di browser.
+- Aplikasi React kamu kini sudah online dan bisa diakses siapa saja.
+
+---
+
+## 📝 Deployment Berkelanjutan (Continuous Deployment)
+
+Setiap kali kamu push perubahan ke repository GitHub, Vercel akan otomatis melakukan deployment ulang. Ini mempermudah kamu mengelola versi terbaru dari aplikasi secara real-time.
+
+---
+
+## 🎉 Kesimpulan
+
+Dengan melakukan deployment ke Vercel, aplikasi React yang sudah kamu buat bisa diakses oleh siapa saja melalui internet secara mudah, cepat, dan aman.
+
+Sekarang, aplikasi AI Summarizer kamu sudah online dan siap digunakan! 🎯🚀

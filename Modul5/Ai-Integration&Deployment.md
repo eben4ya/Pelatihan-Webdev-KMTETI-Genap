@@ -1,8 +1,8 @@
-# 📌 Modul 5&6: Integrasi React JS dengan Model AI untuk Ringkasan
+# 📌 Modul 5: Integrasi React JS dengan Model AI untuk Ringkasan
 
 ## 🎯 Tujuan Pertemuan
 
-Pada pertemuan ke-5&6 ini, peserta akan:
+Pada pertemuan ke-5 ini, peserta akan:
 
 - Memahami konsep integrasi API dalam aplikasi React.
 - Menghubungkan aplikasi React dengan model AI (DeepSeek, Google, Meta) menggunakan API OpenRouter.
